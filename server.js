@@ -7,7 +7,7 @@ var app = express();
 app.get('/perfume', function (req, res) {
 
     var headers = {
-        'User-Agent': 'Just doing this for a school project',
+        'User-Agent': 'Just doing this for a school project, dont blacklist me :)',
         'Content-Type': 'application/x-www-form-urlencoded'
     };
 
