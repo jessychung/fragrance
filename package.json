@@ -1,0 +1,30 @@
+{
+  "name": "fragrance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessychung/fragrance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessychung/fragrance/issues"
+  },
+  "homepage": "https://github.com/jessychung/fragrance#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}
