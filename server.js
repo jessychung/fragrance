@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 
 var app = express();
 
-app.get('/perfume', function (req, res) {
+app.get('/perfume/:test', function (req, res) {
 
 
     var customHeaderRequest = request.defaults({
@@ -13,10 +13,12 @@ app.get('/perfume', function (req, res) {
 
     var param = 'female';
 
-    customHeaderRequest(`https://www.fragrantica.com/search/action=general_search&gender%5B%5D=male&year_from=&year_to=2017&countrylist=all&industrieslist=all&sexage=all&sortoption=popularity`, function (error, response, body) {
+    var pa = req.params.test;
+
+    customHeaderRequest(`https://www.siteinspire.com/websites?${pa}`, function (error, response, body) {
         $ = cheerio.load(body);
         var test  = $('#rezultati').html();
-        res.send(test);
+        res.send(body);
     });
 
 

@@ -18,7 +18,7 @@ $(function () {
     $('#submit').click(function(){
         var gender = $('input[name=smell]:checked').val();
         $.ajax({
-            url: '/perfume',
+            url: '/perfume/categories=1+70',
             type: 'GET',
             success: function(data){
                 $('#results').html(data);
