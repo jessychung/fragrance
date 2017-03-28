@@ -4,23 +4,35 @@ var cheerio = require('cheerio');
 
 var app = express();
 
-app.get('/perfume/:test', function (req, res) {
+app.get('/perfume', function (req, res) {
 
+    var headers = {
+        'User-Agent': 'Just doing this for a school project',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    };
 
-    var customHeaderRequest = request.defaults({
-        headers: {'User-Agent': 'test!!'}
+    var options = {
+        url: 'https://www.fragrantica.com/ajax.php',
+        method: 'POST',
+        headers: headers,
+        form: {
+            action:'general_search',
+            gender: ["male"],
+            year_from: '',
+            year_to: '2017',
+            countrylist:'all',
+            industrieslist:'all',
+            sexage:'all',
+            sortoption:'popularity'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            //send stuff back to main.js
+            res.send(body)
+        }
     });
-
-    var param = 'female';
-
-    var pa = req.params.test;
-
-    customHeaderRequest(`https://www.siteinspire.com/websites?${pa}`, function (error, response, body) {
-        $ = cheerio.load(body);
-        var test  = $('#rezultati').html();
-        res.send(body);
-    });
-
 
 });
 
