@@ -24,11 +24,13 @@ app.get('/perfume', function (req, res) {
             countrylist:'all',
             industrieslist:'all',
             sexage:req.query.age,
-            sortoption:'popularity'
+            sortoption: req.query.sortoption
         }
     };
 
     request(options, function (error, response, body) {
+
+        console.log(options)
         if (!error && response.statusCode == 200) {
 
             $ = cheerio.load(body);
