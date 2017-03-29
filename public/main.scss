@@ -67,7 +67,12 @@ body {
 
 #results {
   a {
-    display: block;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 200;
+    color: #191e22;
+    max-width: 193px;
+    margin: 0 10px;
   }
 }
 
