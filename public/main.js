@@ -51,16 +51,23 @@ $(function () {
 
 
     $('#submit').click(function(){
-        var gender = $('input[name=smell]:checked').val();
+        var smell = $('input[name=smell]:checked').val();
+        var olfactory = $('input[name=olfactory]:checked').val();
+        var age = $('input[name=age]:checked').val();
 
         $.ajax({
             url: '/perfume',
             type: 'GET',
+            data: {
+                smell: smell,
+                olfactory: olfactory,
+                age: age
+            },
             success: function(data){
                 $('#results').html(data);
             },
             error: function(err){
-                alert(err);
+                console.log(err);
             }
         })
     });

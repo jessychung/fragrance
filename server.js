@@ -17,12 +17,13 @@ app.get('/perfume', function (req, res) {
         headers: headers,
         form: {
             action:'general_search',
-            gender: ["male"],
+            gender: [req.query.smell],
             year_from: '',
             year_to: '2017',
+            olfactoryGroup: [req.query.olfactory],
             countrylist:'all',
             industrieslist:'all',
-            sexage:'all',
+            sexage:req.query.age,
             sortoption:'popularity'
         }
     };

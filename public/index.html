@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 <div id="fullpage">
     <div class="section" data-anchor="sec1">
         <h1>Which fragrances should you wear right now?</h1>
@@ -34,10 +33,10 @@
         <h1>You prefer fragrances that are...</h1>
 
         <div class="options options-radio">
-            <input type="radio" id="ff" value="female" name="olfactory"><label for="ff" onclick="window.location.href = '#sec4'">Floral & Fruits</label>
-            <input type="radio" id="fc" value="male" name="olfactory"><label for="fc" onclick="window.location.href = '#sec4'">Fresh & Citrus</label>
-            <input type="radio" id="ws" value="shared" name="olfactory"><label for="ws" onclick="window.location.href = '#sec4'">Warm & Spicy</label>
-            <input type="radio" id="ew" value="shared" name="olfactory"><label for="ew" onclick="window.location.href = '#sec4'">Earthy & Woody</label>
+            <input type="radio" id="ff" value="Floral Fruity" name="olfactory"><label for="ff" onclick="window.location.href = '#sec4'">Floral & Fruity</label>
+            <input type="radio" id="fc" value="Citrus" name="olfactory"><label for="fc" onclick="window.location.href = '#sec4'">Fresh & Citrus</label>
+            <input type="radio" id="ws" value="Oriental Spicy" name="olfactory"><label for="ws" onclick="window.location.href = '#sec4'">Warm & Spicy</label>
+            <input type="radio" id="ew" value="Woody Spicy" name="olfactory"><label for="ew" onclick="window.location.href = '#sec4'">Earthy & Woody</label>
         </div>
 
     </div>
@@ -46,8 +45,8 @@
         <h1>Are you over 25?</h1>
 
         <div class="options options-radio">
-            <input type="radio" id="age-y" value="yes" name="age"><label for="ff" onclick="window.location.href = '#sec5'">Yes</label>
-            <input type="radio" id="age-n" value="no" name="age"><label for="fc" onclick="window.location.href = '#sec5'">No</label>
+            <input type="radio" id="age-y" value="25under" name="age"><label for="age-y" onclick="window.location.href = '#sec5'">Yes</label>
+            <input type="radio" id="age-n" value="25older" name="age"><label for="age-n" onclick="window.location.href = '#sec5'">No</label>
         </div>
     </div>
     <div class="section" data-anchor="sec5">
@@ -56,7 +55,13 @@
 
         <div class="options">
             <input type="text" name="location" class="text" placeholder="Enter your city and province">
+            <button class="btn-light" id="submit"  onclick="window.location.href = '#sec6'">Submit</button>
         </div>
+    </div>
+    <div class="section" data-anchor="sec6">
+        <h1>Here are your recommendations...</h1>
+
+        <div id="results"></div>
     </div>
 </div>
 
