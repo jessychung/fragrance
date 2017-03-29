@@ -21,12 +21,18 @@ $(function () {
                 $.getJSON(wunderground, function (weatherData) {
 
                 }).done(function(res) {
-                    var temp = res.current_observation.temp_f;
-                    if(temp > 25) {
+                    var temp = res.current_observation.temp_c;
+
+                    if(temp >= 22) {
                         var sort = 'summer'
+                    } else if ( temp < 22 && temp > 15) {
+                        var sort = 'spring'
+                    } else if ( temp < 15 && temp > 8) {
+                        var sort = 'fall'
                     } else {
                         var sort = 'winter'
                     }
+
                     $.ajax({
                         url: '/perfume',
                         type: 'GET',
@@ -37,6 +43,8 @@ $(function () {
                             sortoption: sort
                         },
                         success: function(data){
+                            console.log(sort + temp)
+
                             $('#results').html(data);
 
                             $('#results a').hide();
