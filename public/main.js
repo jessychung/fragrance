@@ -11,17 +11,31 @@ $(function () {
 
 
             $('#submit').click(function(){
+
                 var smell = $('input[name=smell]:checked').val();
                 var olfactory = $('input[name=olfactory]:checked').val();
                 var age = $('input[name=age]:checked').val();
                 var location = $('input[name="location"]').val();
                 var sort = 'popularity';
 
+                if(smell == 'female') {
+                    $('#showSmell').text('feminine');
+                } else if(smell == 'male') {
+                    $('#showSmell').text('masculine');
+                } else {
+                    $('#showSmell').text('uni-sex');
+                }
+
                 var wunderground = `http://api.wunderground.com/api/c674f46e6a835ea2/conditions/q/${location}.json`;
                 $.getJSON(wunderground, function (weatherData) {
 
                 }).done(function(res) {
-                    var temp = res.current_observation.temp_c;
+
+                    if(!$.trim(res)) {
+                        console.log('there')
+                    } else {
+                        var temp = res.current_observation.temp_c;
+                    }
 
                     console.log(res + temp)
                     if(temp >= 22) {

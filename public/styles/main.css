@@ -64,11 +64,16 @@ body {
   margin: 0 auto; }
   #results a {
     display: inline-block;
-    font-size: 18px;
-    font-weight: 200;
+    font-size: 15px;
+    font-weight: 400;
     color: #191e22;
     max-width: 193px;
-    margin: 0 10px; }
+    height: 150px;
+    width: 150px;
+    margin: 0 10px;
+    font-family: 'Playfair Display', serif; }
+    #results a:hover {
+      text-decoration: none; }
 
 .text {
   height: 46px;
@@ -82,3 +87,10 @@ body {
   .text:focus {
     box-shadow: none;
     outline: none; }
+
+[data-anchor='sec6'] {
+  background-color: #fff; }
+  [data-anchor='sec6'] p {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300; }
