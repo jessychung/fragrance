@@ -3,16 +3,56 @@ body {
   background: #fcf6f6;
 }
 
+.btn-light {
+  border: 1px solid #e0c2c2;
+  border-radius: 0px;
+  color: #333;
+  font-weight: 200;
+  padding: 12px 30px;
+  margin-top: 30px;
+  &:hover {
+    background-color: #e0c2c2;
+    transition: all .3s;
+  }
+}
+
 .section {
   text-align: center;
   h1{
     font-family: 'Playfair Display', serif;
     color: #191e22;
-    font-size: 45px;
+    font-size: 46px;
     font-weight: 400;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 }
 
-[data-anchor="sec1"] {
-
+.options-radio {
+  margin-top: 40px;
+  input {
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* Internet Explorer */
+    appearance: button; /* CSS3 */
+    &:checked + label {
+      background-color: #e0c2c2;
+      transition: all .3s;
+    }
+  }
+  label{
+    border: 1px solid #e0c2c2;
+    border-radius: 0px;
+    color: #333;
+    font-weight: 200;
+    padding: 12px 30px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
 }

@@ -15,24 +15,49 @@
 <div id="fullpage">
     <div class="section" data-anchor="sec1">
         <h1>Which fragrances should you wear right now?</h1>
-        <a href="#sec2">Take the test</a>
+        <a class="btn btn-light" id="goToNext" href="#sec2">Take the test</a>
     </div>
     <div class="section" data-anchor="sec2">
-        <h1>How you want to smell like?</h1>
+        <h2>Step 1 of 4</h2>
 
-        <label for="femaleSmell"><input type="radio" id="femaleSmell" value="female" name="smell">Feminine</label>
-        <label for="maleSmell"><input type="radio" id="maleSmell" value="male" name="smell">Masculine</label>
-        <label for="sharedSmell"><input type="radio" id="sharedSmell" value="shared" name="smell">Uni-sex</label>
+        <h1>You want to smell...</h1>
 
-        <a id="submit">Submit</a>
-
-        <div id="results">
+        <div class="options options-radio">
+            <input type="radio" id="femaleSmell" value="female" name="smell"><label for="femaleSmell" onclick="window.location.href = '#sec3'">Feminine</label>
+            <input type="radio" id="maleSmell" value="male" name="smell"><label for="maleSmell" onclick="window.location.href = '#sec3'">Masculine</label>
+            <input type="radio" id="sharedSmell" value="shared" name="smell"><label for="sharedSmell" onclick="window.location.href = '#sec3'">Uni-sex</label>
         </div>
+
     </div>
     <div class="section" data-anchor="sec3">
-        <h1>Favourite smell?</h1>
+        <h2>Step 2 of 4</h2>
+        <h1>You prefer fragrances that are...</h1>
+
+        <div class="options options-radio">
+            <input type="radio" id="ff" value="female" name="olfactory"><label for="ff" onclick="window.location.href = '#sec4'">Floral & Fruits</label>
+            <input type="radio" id="fc" value="male" name="olfactory"><label for="fc" onclick="window.location.href = '#sec4'">Fresh & Citrus</label>
+            <input type="radio" id="ws" value="shared" name="olfactory"><label for="ws" onclick="window.location.href = '#sec4'">Warm & Spicy</label>
+            <input type="radio" id="ew" value="shared" name="olfactory"><label for="ew" onclick="window.location.href = '#sec4'">Earthy & Woody</label>
+        </div>
+
     </div>
-    <div class="section" data-anchor="sec4">4</div>
+    <div class="section" data-anchor="sec4">
+        <h2>Step 3 of 4</h2>
+        <h1>Are you over 25?</h1>
+
+        <div class="options options-radio">
+            <input type="radio" id="age-y" value="yes" name="age"><label for="ff" onclick="window.location.href = '#sec5'">Yes</label>
+            <input type="radio" id="age-n" value="no" name="age"><label for="fc" onclick="window.location.href = '#sec5'">No</label>
+        </div>
+    </div>
+    <div class="section" data-anchor="sec5">
+        <h2>Step 4 of 4</h2>
+        <h1>Where do you live?</h1>
+
+        <div class="options">
+            <input type="text" name="location" class="text" placeholder="Enter your city and province">
+        </div>
+    </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
