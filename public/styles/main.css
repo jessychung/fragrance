@@ -58,13 +58,17 @@ body {
     box-shadow: none;
     outline: none; }
 
-#results a {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 200;
-  color: #191e22;
-  max-width: 193px;
-  margin: 0 10px; }
+#results {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto; }
+  #results a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 200;
+    color: #191e22;
+    max-width: 193px;
+    margin: 0 10px; }
 
 .text {
   height: 46px;
