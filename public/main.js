@@ -23,12 +23,13 @@ $(function () {
                 }).done(function(res) {
                     var temp = res.current_observation.temp_c;
 
+                    console.log(res + temp)
                     if(temp >= 22) {
                         var sort = 'summer'
                     } else if ( temp < 22 && temp > 15) {
                         var sort = 'spring'
                     } else if ( temp < 15 && temp > 8) {
-                        var sort = 'fall'
+                        var sort = 'autumn'
                     } else {
                         var sort = 'winter'
                     }
