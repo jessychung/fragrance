@@ -26,26 +26,35 @@ $(function () {
                     $('#showSmell').text('uni-sex');
                 }
 
+                if(olfactory == 'Floral Fruity') {
+                    $('#showOlfactory').text('floral & fruity');
+                } else if(olfactory == 'Citrus') {
+                    $('#showOlfactory').text('fresh & citrus');
+                } else if (olfactory == 'Oriental Spicy') {
+                    $('#showOlfactory').text('warm & spicy');
+                } else {
+                    $('#showOlfactory').text('earthy & woody');
+                }
+
                 var wunderground = `http://api.wunderground.com/api/c674f46e6a835ea2/conditions/q/${location}.json`;
                 $.getJSON(wunderground, function (weatherData) {
-
                 }).done(function(res) {
 
-                    if(!$.trim(res)) {
-                        console.log('there')
-                    } else {
-                        var temp = res.current_observation.temp_c;
-                    }
+                    var temp = res.current_observation.temp_c;
+                    console.log(res);
 
-                    console.log(res + temp)
                     if(temp >= 22) {
-                        var sort = 'summer'
+                        var sort = 'summer';
+                        $('#showTemp').text('hot');
                     } else if ( temp < 22 && temp > 15) {
-                        var sort = 'spring'
+                        var sort = 'spring';
+                        $('#showTemp').text('warm');
                     } else if ( temp < 15 && temp > 8) {
-                        var sort = 'autumn'
+                        var sort = 'autumn';
+                        $('#showTemp').text('cool');
                     } else {
-                        var sort = 'winter'
+                        var sort = 'winter';
+                        $('#showTemp').text('cold');
                     }
 
                     $.ajax({
@@ -58,8 +67,6 @@ $(function () {
                             sortoption: sort
                         },
                         success: function(data){
-                            console.log(sort + temp)
-
                             $('#results').html(data);
 
                             $('#results a').hide();
@@ -75,19 +82,7 @@ $(function () {
 
             });
 
-
-        },
-
-        // getWeather: function(city){
-        //     var wunderground = `http://api.wunderground.com/api/c674f46e6a835ea2/conditions/q/${city}.json`;
-        //     $.getJSON(wunderground, function (weatherData) {
-        //         var temp = weatherData.current_observation.temp_f;
-        //
-        //         if(temp > 25) {
-        //
-        //         }
-        //     });
-        // },
+        }
     };
 
     fragranceApp.init();

@@ -30,9 +30,7 @@ app.get('/perfume', function (req, res) {
 
     request(options, function (error, response, body) {
 
-        console.log(options)
         if (!error && response.statusCode == 200) {
-
             $ = cheerio.load(body);
             //send stuff back to main.js
             res.send(body)
